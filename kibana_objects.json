@@ -1,0 +1,131 @@
+[
+  {
+    "_id": "c4ae7160-f568-11e7-bd58-b5e573d7508f",
+    "_type": "visualization",
+    "_source": {
+      "title": "Bytes-vs.-Time",
+      "visState": "{\"title\":\"Bytes-vs.-Time\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Sum of bytes\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Sum of bytes\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "5e5c42c0-f482-11e7-b9de-b53c33f12e7c",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic by Country & OS",
+      "visState": "{\"title\":\"Traffic by Country & OS\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"geoip.country_name.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"key\":\"user_agent.os_name\",\"negate\":true,\"params\":{\"query\":\"Other\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Other\"},\"query\":{\"match\":{\"user_agent.os_name\":{\"query\":\"Other\",\"type\":\"phrase\"}}}}],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    }
+  },
+  {
+    "_id": "389e8940-f567-11e7-bd58-b5e573d7508f",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic vs. Location",
+      "visState": "{\"title\":\"Traffic vs. Location\",\"type\":\"tile_map\",\"params\":{\"mapType\":\"Scaled Circle Markers\",\"isDesaturated\":true,\"addTooltip\":true,\"heatClusterSize\":1.5,\"legendPosition\":\"bottomright\",\"mapZoom\":2,\"mapCenter\":[0,0],\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"geoip.location\",\"autoPrecision\":true,\"isFilteredByCollar\":true,\"useGeocentroid\":true,\"precision\":2,\"customLabel\":\"Traffic vs. Location\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "aae08560-f488-11e7-b9de-b53c33f12e7c",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique Visits",
+      "visState": "{\"title\":\"Unique Visits\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"geoip.ip.keyword\",\"customLabel\":\"Unique Visits\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "3e832080-f488-11e7-b9de-b53c33f12e7c",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total-Requests",
+      "visState": "{\"title\":\"Total-Requests\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total requests\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "b7b6e7e0-f56c-11e7-bd58-b5e573d7508f",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total-Requests-by-City",
+      "visState": "{\"title\":\"Total-Requests-by-City\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"geoip.city_name.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"City\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "a31e93e0-f56d-11e7-bd58-b5e573d7508f",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique Visits by city",
+      "visState": "{\"title\":\"Unique Visits by city\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"remote_ip.keyword\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"geoip.city_name.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"City\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"geoip.country_name.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Country\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "814a04c0-f48c-11e7-b9de-b53c33f12e7c",
+    "_type": "visualization",
+    "_source": {
+      "title": "Non-200 Response Code vs. Time",
+      "visState": "{\"title\":\"Non-200 Response Code vs. Time\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":false,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":false,\"truncate\":20,\"rotate\":0,\"filter\":false},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"defaultYExtents\":false,\"setYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Non-200 Response Code vs. Time\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Non-200 Response Code vs. Time\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Non-200 Response Code vs. Time\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"split\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"1d\",\"min_doc_count\":1,\"extended_bounds\":{},\"row\":false}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"response.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":\"table\",\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"filter\":[{\"meta\":{\"index\":\"e6c13f80-f52c-11e7-bd58-b5e573d7508f\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"response\",\"value\":\"200\",\"params\":{\"query\":\"200\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"response\":{\"query\":\"200\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "b0529e20-f48d-11e7-b9de-b53c33f12e7c",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Nginx logs dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":3},\"id\":\"3e832080-f488-11e7-b9de-b53c33f12e7c\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"5e5c42c0-f482-11e7-b9de-b53c33f12e7c\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":6,\"y\":3},\"id\":\"aae08560-f488-11e7-b9de-b53c33f12e7c\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":12,\"x\":0,\"y\":12},\"id\":\"c4ae7160-f568-11e7-bd58-b5e573d7508f\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":3,\"i\":\"6\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"389e8940-f567-11e7-bd58-b5e573d7508f\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":3,\"i\":\"7\",\"w\":6,\"x\":0,\"y\":6},\"id\":\"b7b6e7e0-f56c-11e7-bd58-b5e573d7508f\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":3,\"i\":\"8\",\"w\":6,\"x\":6,\"y\":6},\"id\":\"a31e93e0-f56d-11e7-bd58-b5e573d7508f\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":3,\"i\":\"9\",\"w\":12,\"x\":0,\"y\":9},\"id\":\"814a04c0-f48c-11e7-b9de-b53c33f12e7c\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.1.1\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":false}",
+      "uiStateJSON": "{\"P-4\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}},\"P-6\":{\"mapCenter\":[29.53522956294847,-7.382812500000001],\"mapZoom\":2},\"P-7\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-8\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-9\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
