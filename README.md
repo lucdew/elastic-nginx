@@ -25,5 +25,5 @@ sudo sysctl -w vm.max_map_count=262144
 
 ## Dashboard example
 
-<img src="https://github.com/lucdew/elastic-nginx/raw/master/nginx_logs_dashboard.png" alt="Nginx logs dashboard" width="60%" height="60%"/>
+<img src="https://github.com/lucdew/elastic-nginx/raw/master/nginx_logs_dashboard.png" alt="Nginx logs dashboard" />
 
