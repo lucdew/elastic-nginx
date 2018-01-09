@@ -1,6 +1,6 @@
 # Offline Nginx logs stats with ELK
 
-Offline access log stats for a personal nginx web site using a dockerized ELK stack (6.X)
+Offline access log stats for a single personal nginx web site using a dockerized ELK stack (6.X)
 
 Note that the access.log file is already concatenated (not realistic for large volumes web sites)
 In the example script here, it is retrieved from a remote host through ssh
